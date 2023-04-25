@@ -19,7 +19,7 @@ def function1():
             
             print(f'{X.detach().numpy():.3f}, {Y.detach().numpy():.3f}, {Z.detach().numpy():.3f}, {F_1(X,Y,Z).detach().numpy():.3f}', end="\r")
         
-        print(X.detach().numpy(), Y.detach().numpy(), Z.detach().numpy(), F_1(X,Y,Z).detach().numpy(), '\n')
+        print(X.detach().numpy(), Y.detach().numpy(), Z.detach().numpy(), F_1(X,Y,Z).detach().numpy(), '\n',)
  
 def function2():
     F_2 = lambda X, Y: 3*X**4+4*X**3-12*X**2+12*Y**2-24*Y

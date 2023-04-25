@@ -13,7 +13,7 @@ s2 = [0.0, 1.0, 2.0]
 
 def f(x, beta): return 1.0 / (1.0 + math.exp(-beta*x))
 
-def dnn(u, w, s, p, beta=3.0):
+def dnn(u, w, s, p, beta=1.0):
     x = [f(sum([w[i][j]*u[p][j] for j in range(3)]), beta) for i in range(2)] + [1.0]
     y = f(sum([s[i]*x[i] for i in range(3)]), beta)
     
