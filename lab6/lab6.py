@@ -1,4 +1,5 @@
 import math
+import random
 from typing import List
 
 
@@ -21,7 +22,8 @@ def calculate_s(s: List[float],
                 z: List[float], 
                 i: int):
     x, y = calculate_xy(w, u, s)
-    return sum([(y[p] - z[p]) * d_f(sum([s[j]*x[p][j] for j in range(3)])) * x[p][i] for p in range(4)]) 
+    p = random.randint(0, 3)
+    return (y[p] - z[p]) * d_f(sum([s[j]*x[p][j] for j in range(3)])) * x[p][i] 
 
 def calculate_w(s: List[float], 
                 w: List[List[float]], 
@@ -30,7 +32,8 @@ def calculate_w(s: List[float],
                 i: int ,
                 j: int):
     _, y = calculate_xy(w, u, s)
-    return sum([(y[p] - z[p]) * d_f(y[p]) * s[i] * d_f(sum([w[i][k] * u[p][k] for k in range(3)])) * u[p][j] for p in range(4)])
+    p = random.randint(0, 3)
+    return (y[p] - z[p]) * d_f(y[p]) * s[i] * d_f(sum([w[i][k] * u[p][k] for k in range(3)])) * u[p][j] 
 
 def calculate_max(w_old, w_new, s_old, s_new):
     return max(max([abs(s_new[i] - s_old[i]) for i in range(3)]), 
