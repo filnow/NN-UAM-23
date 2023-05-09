@@ -15,3 +15,5 @@ Repository for introduction to neural networks course at UAM 2023
 * Backpropagation with gradien descent for finding XOR values
 
 * Backpropagation with stochastic gradien descent for finding XOR values
+
+* Autoencoder for 3x3 black and white images with GD and BP
