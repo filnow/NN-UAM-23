@@ -31,10 +31,8 @@ def calculate_w(s: List[float],
                 i: int ,
                 j: int):
     _, y = calculate_xy(w, u, s)
-    suma = 0.0
-    for p in range(2):
-     suma += sum([(y[p][t] - u[p][t]) * d_f(y[p][t]) * s[i][t] * d_f(sum([w[i][k] * u[p][k] for k in range(10)])) * u[p][j] for t in range(9)])
-    return suma
+    return sum([sum([(y[p][t] - u[p][t]) * d_f(y[p][t]) * s[i][t] * d_f(sum([w[i][k] * u[p][k] for k in range(10)])) * u[p][j] for t in range(9)]) for p in range(2)])
+    
 
 def calculate_max(w_old, w_new, s_old, s_new):
     return max(max([abs(s_new[i][j] - s_old[i][j]) for i in range(3) for j in range(9)]), 
