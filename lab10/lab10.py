@@ -2,7 +2,7 @@ import random
 import math
 
 
-def calculate_x(i, t):
+def calculate_x(i: int, t: int):
     if t == 0:
         xs[i] = random.randint(0, 1)
     else:
