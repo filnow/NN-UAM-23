@@ -1,4 +1,5 @@
 import random
+import math
 
 
 def calculate_x(i, t):
@@ -7,15 +8,17 @@ def calculate_x(i, t):
     else:
         u[i] = sum([w[i][j] * x[j] for j in range(25)]) - theta[i]
 
-        if u[i] > 0: xs[i] = 1
-        elif u[i] == 0: calculate_x(i, t-1)
+        if random.random() <= f(u[i]): xs[i] = 1
         else: xs[i] = 0
-            
+
 x = [0,0,0,0,0,
      0,1,1,0,0,
      0,0,1,0,0,
      0,0,1,0,0,
      0,0,1,0,0]
+
+T = 1 
+f = lambda x: 1/(1+math.exp(-x/T))
 
 c = [[(x[i] - 0.5) * (x[j] - 0.5) if j != i else 0 for j in range(25)] for i in range(25)]
 theta = [sum(i) for i in c]

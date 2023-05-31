@@ -19,3 +19,7 @@ Repository for introduction to neural networks course at UAM 2023
 * Autoencoder for 3x3 black and white images with GD and BP
 
 * Convolution and pooling from scratch for 5x5 black and white images
+
+* Hopfield network 
+
+* Boltzmann machine 
