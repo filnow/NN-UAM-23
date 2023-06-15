@@ -17,7 +17,7 @@ x = [0,0,0,0,0,
      0,0,1,0,0,
      0,0,1,0,0]
 
-T = 1 
+T = 2 
 f = lambda x: 1/(1+math.exp(-x/T))
 
 c = [[(x[i] - 0.5) * (x[j] - 0.5) if j != i else 0 for j in range(25)] for i in range(25)]
